@@ -1,11 +1,12 @@
-import Header from './Header';
-import Slider from './Slider';
+
 import './App.css';
+import NavBar from './components/NavBar';
+
+
 
 const App = () => {
   return <>
-  <Header/>
-  <Slider/>
+    <NavBar/>
   </>
 }
 
