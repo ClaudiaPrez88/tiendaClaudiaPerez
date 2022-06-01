@@ -1,7 +1,6 @@
 
 import {Navbar, Nav, Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Slider'
 import Slider from './Slider';
 import Logo from './img/logo.png';
 
