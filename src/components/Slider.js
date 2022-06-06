@@ -1,46 +1,36 @@
 
-import {Carousel , Nav, Container} from 'react-bootstrap';
+import {Carousel} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Elemento1 from './img/elemento1.png';
+
 
 const Slider = () => {
   return (
     <>
    
-     <Carousel  className='slider'>
+     <Carousel  className='slider fondo1'>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={Elemento1}
+          src={'img/elemento1.png'}
           alt="First slide"
         />
         <Carousel.Caption>
-          <h5>Soy Claudia Pérez Velazquez</h5>
-          <p>Te invito a conocer mi trabajo como Frontend Developer.</p>
+          <h5>Servilletas</h5>
+          <p>Elige el modelo que más te gusta.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={Elemento1}
+          src={'img/elemento2.png'}
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h5>Soy Claudia Pérez Velazquez</h5>
-          <p>Te invito a conocer mi trabajo como Diseñadora Web.</p>
+        <h5>Servilletas</h5>
+          <p>Elige el modelo que más te gusta.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={Elemento1}
-          alt="Third slide"
-        />
-        <Carousel.Caption>
-        <h5>Soy Claudia Pérez Velazquez</h5>
-          <p>Te invito a conocer mi trabajo como Audiovisualista.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
+      
     </Carousel>  
     </>
   )}

@@ -4,8 +4,30 @@
 
 
 .logo{
-  width: 80px;
+  width: 120px;
   height: auto;
+}
+.carrito{
+  height: 30px;
+  width: auto;
+}
+.mensaje-slider{
+  font-family: 'JetBrains Mono', monospace;
+  color:#C43A96;
+  font-size: 13px;
+  width: 400px;
+  position:absolute;
+  z-index: 30;
+  top:360px;
+  left:190px;
+
+}
+.card {
+  margin: 20px;
+}
+.carrito{
+  fill: #ffffff;
+  text-shadow: 2px 2px #6348C9;
 }
 .navbar-expand {
   margin: 0px;
@@ -21,10 +43,12 @@ a.nav-link {
   text-shadow: 2px 2px #6348C9;
   padding-right: 2.5rem;
 }
-
+.menu {
+  background-color: #FFE3FA;
+}
 
 .fondo1{
-  background-image: url("components/img/fondo1.png");
+  background-image: url("../public/img/fondo1.png");
   background-size: cover;
 }
 .carousel-caption {
@@ -44,9 +68,15 @@ a.nav-link {
   top: 8.25rem;
 }
 .slider img.d-block.w-100 {
-  width: 70%!important;
-  margin: 0 auto 40px auto;
+  width: 40%!important;
+  margin: 0 100px 40px;
+  float: right;
+
 }
 
+.carousel-caption {
+  text-align: left;
+  color: #6348c9;
+}
 
 
