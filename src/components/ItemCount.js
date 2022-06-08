@@ -18,6 +18,7 @@ const ItemCount = () => {
 
   const [contador,setContador] = useState(1)
   const AumentarContador = () => {
+      //Stock = 20
     if (contador < 20){setContador(contador + 1)}
     
   }
