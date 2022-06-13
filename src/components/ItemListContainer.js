@@ -1,10 +1,31 @@
+import { useEffect, useState } from "react";
+import productos from "../utils/Productos";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import customFetch from "../utils/customFetch";
+import ItemList from './ItemList'
 
 
-const ItemListContainer = (prop) => {
-    return(
-        <h1 className="mensaje-slider">Eligue las servilletas que deseas cotizar haciendo click en el botón de compra, luego haz click en el botón de "cotizar mi pedido" y llena el formulario para realizar tu solicitud. Te contactaremos a la brevedad para atender tu solicitud.</h1>
+
+
+function ItemListContainer() {
+    const [items, Setitems] = useState ([])
+    useEffect (()=> {
+        customFetch(2000,productos)
+        .then(resultado => Setitems(resultado))
+    }, [items]);
+   
+    return (
+        
+            <>
+             <ItemList productos={items}/>
+            </>
+       
+
     )
-};
+    
+
+    
+}
 
 
 

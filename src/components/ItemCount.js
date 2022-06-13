@@ -1,37 +1,27 @@
-
 import {Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import {useState} from 'react';
-
-
- // contador = 0
-  // const resultado = useState(0)
-  // const contador = resultado[0]
-  // const CambiarContador = resultado [1]
-  //consta + [variable, función] = hook(valor inicial)
+import { useState } from 'react';
 
 
 
-const ItemCount = () => {
-
-
-  const [contador,setContador] = useState(1)
-  const AumentarContador = () => {
-      //Stock = 20
-    if (contador < 20){setContador(contador + 1)}
-    
+function ItemCount ({stock}) {
+  const [count, setCount] = useState(0)
+  function adding (){
+    if (count < stock) {
+      setCount(count + 1)
+    }
+  }
+  function subs(){
+    if (count > 0){
+      setCount( count - 1)
+    }
   }
 
-  const BajarContador = () => {
-    if (contador > 0) { setContador(contador - 1)}
-   
-  }
   return <>
    
-              <p>Cantidad:{contador}</p>
-              <Button variant="outline-primary" onClick={AumentarContador}>+</Button>{' '}
-              <Button variant="outline-primary" onClick={BajarContador}>-</Button>{' '}
+              <Button variant="outline-primary" onClick={subs}>-</Button>
+              <span>{count}</span>
+              <Button variant="outline-primary" onClick={adding}>+</Button>
              
               
   </>

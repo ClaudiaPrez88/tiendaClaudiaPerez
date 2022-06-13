@@ -1,15 +1,14 @@
-import {Card,Button,Col} from 'react-bootstrap';
+import {Card,Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemCount from './ItemCount';
 
-const ContenedorImg = (props) => {
+const Carproduct = (props) => {
+
     return(
         <>
          <Col xs={12} sm={6} lg={3}>
             <Card>
-                <Card.Img variant="top" src={props.texto} />
+                <Card.Img variant="top" src={props.servilleta} alt={props.nombre} />
                 <Card.Body>
-                <ItemCount/>
                 </Card.Body>
             </Card>
           </Col>
@@ -19,4 +18,4 @@ const ContenedorImg = (props) => {
 
 
 
-export default ContenedorImg
+export default Carproduct
