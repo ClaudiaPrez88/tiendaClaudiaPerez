@@ -5,7 +5,7 @@ const Carproduct = (props) => {
 
     return(
         <>
-         <Col xs={12} sm={6} lg={3}>
+         <Col xs={12} sm={6} lg={4}>
             <Card>
                 <Card.Img variant="top" src={props.servilleta} alt={props.nombre} />
                 <Card.Body>
