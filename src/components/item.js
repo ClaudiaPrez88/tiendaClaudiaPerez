@@ -5,7 +5,7 @@ import ItemCount from './ItemCount';
  function Item({id, name, image, description, stock}) {
   return (
     <Col xs={4}>
-        <div key={id}>
+        <div key={id} className='detalle' >
         <p>{name}</p>
         <img src={image} alt={name} ></img>
         <p>{description}</p>
