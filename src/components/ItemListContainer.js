@@ -3,6 +3,8 @@ import productos from "../utils/Productos";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import customFetch from "../utils/customFetch";
 import ItemList from './ItemList'
+import {Container, Row} from 'react-bootstrap';
+
 
 
 
@@ -17,8 +19,12 @@ function ItemListContainer() {
     return (
         
             <>
-           
-             <ItemList productos={items}/>
+            <Container>
+                <Row>
+                    <ItemList productos={items}/>
+                </Row>
+            </Container>
+             
             </>
        
 
@@ -31,5 +37,4 @@ function ItemListContainer() {
 
 
 export default ItemListContainer;
-
 

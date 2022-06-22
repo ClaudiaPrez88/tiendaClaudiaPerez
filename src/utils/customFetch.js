@@ -1,3 +1,5 @@
+
+
 const customFetch = (time, task) => {
   return new Promise ((resolve)=>{
       setTimeout(()=>{
@@ -5,5 +7,7 @@ const customFetch = (time, task) => {
       }, time)
   })
 }
+
+
 
 export default customFetch

@@ -24,17 +24,42 @@ body{
   left:190px;
 
 }
+.card-title {
+  
+  font-size: 40px;
+  font-weight: 700;
+}
+.stock{
+  font-weight: 700;
+}
 .detalle{
   background: #ffffff;
   padding: 10px;
   border-radius: 20px; 
   margin: 50px 0px;
 }
+button.btn.btn-outline-primary {
+  margin-right: 5px;
+}
+button.btn.btn-outline-primary {
+  margin-left: 5px;
+}
+button.btn.btn-primary {
+  margin: 10px 0px;
+}
 .contenedor-detalle {
 background: #ffffff;
-margin:50px 0px;
+margin:10px 0px;
 padding: 10px;
 border-radius: 20px;
+}
+.img-item{
+  transform: scale(0.9);
+  transition-duration: 300ms;
+  }
+.img-item:hover{
+transform: scale(1);
+transition-duration: 300ms;
 }
 .me-auto {
   margin-left: auto!important;

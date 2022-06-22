@@ -3,23 +3,23 @@ import ItemCount from './ItemCount'
 import {Card, Button, Container, Col, Row} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({id, name, image, description, stock}) => {
   return (
     <>
     <Container className='contenedor-detalle'>
       <Row>
-        
         <Col xs={12} md={6}>
-        <Card.Img variant="top" src={producto.image} alt={producto.name} />
+        <Card.Img variant="top" src={image} alt={name} />
+        <div key={id} className='detalle' ></div>
         </Col>
         <Col xs={12} md={6}>
         <Card.Body>
-            <Card.Title>{producto.name}</Card.Title>
+            <Card.Title>{name}</Card.Title>
             <Card.Text>
-            {producto.description}
+            {description}
             </Card.Text>
-            <h2>Stock:{producto.stock}</h2>
-        <ItemCount stock={producto.stock}/>
+            <h2>Stock:{stock}</h2>
+        <ItemCount stock={stock}/>
         <br></br>
             <Button variant="primary"> Agregar al carro</Button>
           </Card.Body>
