@@ -11,9 +11,12 @@ import {Container, Row} from 'react-bootstrap';
 
 function ItemListContainer() {
     const [items, Setitems] = useState ([])
+
     useEffect (()=> {
-        customFetch(2000,productos)
-        .then(resultado => Setitems(resultado))
+     
+            customFetch(2000,productos)
+            .then(resultado => Setitems(resultado))
+       
     }, [items]);
    
     return (

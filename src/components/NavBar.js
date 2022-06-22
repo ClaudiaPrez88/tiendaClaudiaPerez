@@ -1,5 +1,5 @@
 
-import {Navbar, Nav, Container, NavDropdown} from 'react-bootstrap';
+import {Navbar, Nav, Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Car from './CarWidgets';
 import { Link } from 'react-router-dom';
@@ -18,9 +18,9 @@ return (
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto ">
-        <Link to='/category1' > Categoria 1 </Link>
-        <Link to='/category2' > Categoria 2 </Link>
-        <Link to='/category3' >Categoria 3</Link>
+        <Link to='detail/1' > Categoria 1 </Link>
+        <Link to='detail/2' > Categoria 2 </Link>
+        <Link to='detail/3' >Categoria 3</Link>
         <Nav.Link><Car/></Nav.Link>
       </Nav>
     </Navbar.Collapse>
