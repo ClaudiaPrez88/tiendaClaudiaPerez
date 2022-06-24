@@ -9,7 +9,7 @@ const ItemDetail = ({id, name, image, description, stock}) => {
     <Container className='contenedor-detalle'>
       <Row>
         <Col xs={12} md={6}>
-        <Card.Img variant="top" src={image} alt={name} />
+        <Card.Img variant="top" src={`../${image}`} alt={name} />
         <div key={id} className='detalle' ></div>
         </Col>
         <Col xs={12} md={6}>

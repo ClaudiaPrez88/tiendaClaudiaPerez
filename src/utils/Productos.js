@@ -6,6 +6,7 @@ const productos = [
      image:'img/servilletas/M2201.png',
      description:'Servilletas de marca Maki. El paquete contiene 12 servilletas.',
      stock:10,
+     category:'Campo',
     },
      {
          id: 2,
@@ -13,6 +14,7 @@ const productos = [
          image:'img/servilletas/M2601.png',
          description:'Servilletas de marca Maki. El paquete contiene 12 servilletas.',
          stock:11,
+         category:'Flores'
      },
      {
          id: 3,
@@ -20,6 +22,7 @@ const productos = [
          image:'img/servilletas/M9001.png',
          description:'Servilletas de marca Maki. El paquete contiene 12 servilletas.',
          stock:32,
+         category:'Animales'
      }
  ]
  
@@ -59,10 +62,10 @@ const productos = [
     })
 }
 
-export const getProductByCategory = (categoryId) =>{
+export const getProductByCategory = (category) =>{
     return new Promise((resolve) => {
         setTimeout(()=>{
-            resolve(productos.filter(prod => prod.categoryId === categoryId));
+            resolve(productos.filter(prod => prod.category === category));
         }, 500)
     })
 }

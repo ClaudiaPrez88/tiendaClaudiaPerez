@@ -18,9 +18,9 @@ return (
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto ">
-        <Link to='detail/1' > Categoria 1 </Link>
-        <Link to='detail/2' > Categoria 2 </Link>
-        <Link to='detail/3' >Categoria 3</Link>
+        <Link to='category/Campo' >Campo </Link>
+        <Link to='category/Flores' >Flores </Link>
+        <Link to='category/Animales' >Animales</Link>
         <Nav.Link><Car/></Nav.Link>
       </Nav>
     </Navbar.Collapse>

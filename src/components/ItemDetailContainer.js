@@ -11,8 +11,7 @@ const ItemDetailContainer = () => {
     useEffect (()=> {
         getProductById(parseInt(id))
         .then(response => {Setproduct(response)})
-    });
-
+    }, []);
   return (
     <div className='detalle'>
       <ItemDetail {...product}/>

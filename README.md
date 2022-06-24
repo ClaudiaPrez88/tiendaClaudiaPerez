@@ -1,3 +1,12 @@
+# Tienda Claudia Perez
+Este proyecto se trata de una tienda virtual de servilletas para decoupage.
+La idea es que el usuario ingrese a la página y pueda visualizar, el menú de navegación, un slider que de cuenta del producto, luego una sección donde puedo ver 3 productos (3 servilletas), donde cada una tendrá un botón que me lleva a ver el detalle.
+En el menú de navegación tengo la opción de 3 categorias a la que puedo ser redirigida. 
+Estoy usando 'Bootstrap' para crear un diseño responsivo y 'Css' y como parte del proyecto de Coderhouse también se nos pidió incluir 'React Router'. 
+Decidí poner el slider al inicio porque deseo poder usar este sitio luego de terminar el curso y es el diseño que el cliente me pidió. Ademas este rubro tiene como cliente personas de la tercera edad y es importante que el flujo sea muy claro, que tengo muchas imágenes y la letra sea grande. 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
