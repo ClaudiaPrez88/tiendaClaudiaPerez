@@ -8,7 +8,7 @@ function Logo() {
   return (
         <Col xs={12} md={4}> 
             <Link to='/'>
-                 <img src='./img/logo.png' className='logo'></img>
+                 <img src='../img/logo.png' className='logo'></img>
             </Link>
             
         </Col> 

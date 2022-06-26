@@ -5,7 +5,7 @@ export const Car = () => {
     <>
     <img
     className="carrito"
-    src={'img/cart.svg'}
+    src={'../img/cart.svg'}
       alt="carrito"
     ></img>
     </>

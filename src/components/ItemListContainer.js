@@ -6,25 +6,36 @@ import ItemList from './ItemList'
 import {Container, Row} from 'react-bootstrap';
 import { useParams } from "react-router-dom";
 import { getProductByCategory } from "../utils/Productos";
+import ProductLoader from "./ProductLoader";
+
 
 
 function ItemListContainer() {
     // items es nuestro estado / SetItems es la funcion con que modifico el estado
     // usestate es nuestro estado inicial, en este caso un array vacio
     const [items, Setitems] = useState ([])
-    
-    // categoryId = el path que se llamará en las rutas
-    const {categoryId} = useParams()
-    console.log(categoryId)
- useEffect (()=> {
-        if(!categoryId)
+    const loader = document.getElementById('loader')
+    const [loading, SetLoading] = useState(true)
 
+    
+
+    // categoryId = el path que se llamará en las rutas
+    const {categoryId} = useParams();
+   
+ useEffect (()=> {
+    SetLoading(true);
+    
+        if(!categoryId)
          {customFetch(2000,productos)
-            .then(resultado => Setitems(resultado))}
+            .then(resultado => {
+            Setitems(resultado)
+            SetLoading(false)
+        })}
         else 
         {getProductByCategory(categoryId)
-            .then(response => {Setitems(response)})
-            console.log(categoryId)
+            .then(response => {
+                Setitems(response)
+                SetLoading(false)}) 
         }  
         //Runs on every render vs
         // useEffect(() => {
@@ -33,9 +44,9 @@ function ItemListContainer() {
     }, [categoryId]);
 
     return (
-            <Container>
+            <Container className='margen'>
                 <Row>
-                    <ItemList productos={items}/>
+                {loading?<ProductLoader/>:<ItemList productos={items} />}
                 </Row>
             </Container> 
     )  
