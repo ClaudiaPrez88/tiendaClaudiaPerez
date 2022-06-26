@@ -9,20 +9,29 @@ import { getProductByCategory } from "../utils/Productos";
 
 
 function ItemListContainer() {
+    // items es nuestro estado / SetItems es la funcion con que modifico el estado
+    // usestate es nuestro estado inicial, en este caso un array vacio
     const [items, Setitems] = useState ([])
-    const {categoryId} = useParams()
     
-    useEffect (()=> {
-        if(categoryId)
-         {getProductByCategory(categoryId)
-         .then(response => {Setitems(response)})}
+    // categoryId = el path que se llamará en las rutas
+    const {categoryId} = useParams()
+    console.log(categoryId)
+ useEffect (()=> {
+        if(!categoryId)
+
+         {customFetch(2000,productos)
+            .then(resultado => Setitems(resultado))}
         else 
-        {customFetch(2000,productos)
-        .then(resultado => Setitems(resultado))
+        {getProductByCategory(categoryId)
+            .then(response => {Setitems(response)})
+            console.log(categoryId)
         }  
-    }, [items]);
-    console.log(items)
-   
+        //Runs on every render vs
+        // useEffect(() => {
+        //     //Runs only on the first render
+        //   }, []);
+    }, [categoryId]);
+
     return (
             <Container>
                 <Row>

@@ -9,6 +9,9 @@ body{
   width: 120px;
   height: auto;
 }
+.menu-nav{
+ background: #FFE3FA;
+}
 .carrito{
   height: 30px;
   width: auto;
