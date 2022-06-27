@@ -6,7 +6,10 @@ import {contexto} from './CartContext';
 
  const Car = () => {
   const resultado = useContext(contexto)
-  console.log(resultado)
+  setTimeout(() => {
+    resultado.setCarrito(['Producto 1'])
+  }, 5000);
+
   return (
     <>
     <Link to='/cart'>Carrito:{resultado.cantidadTotal}

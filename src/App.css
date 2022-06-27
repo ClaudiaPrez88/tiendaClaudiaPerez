@@ -32,8 +32,6 @@ body{
   display: inline-block;
 }
 .hide  {
-  background-color: salmon;
-  color: white;
   display: none
 }
 .show {
