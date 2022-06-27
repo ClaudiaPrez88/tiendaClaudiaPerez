@@ -2,14 +2,24 @@ import React from 'react'
 import ItemCount from './ItemCount'
 import {Card, Button, Container, Col, Row} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
 
 const ItemDetail = ({id, name, image, description, stock}) => {
+  const [cant,setCant] = useState(0);
+ 
+  
 
   // componente padre crea funcion, pasar la información del hijo al padre se llama state uplifting
-  const onAdd = (cantidadSeleccionada) =>{
-    console.log('desde ItemDetail:' + cantidadSeleccionada)
+ const onAdd = (cantidadSeleccionada) =>{
+    console.log(cantidadSeleccionada)
+    setCant(cantidadSeleccionada);
+    const cantidad = [cantidadSeleccionada];
+    console.log(cantidad)
     // lo almaceno en un estado interno de ItemDetail
   }
+  
+
+
   return (
     <>
     <Container className='contenedor-detalle'>
@@ -25,10 +35,11 @@ const ItemDetail = ({id, name, image, description, stock}) => {
             {description}
             </Card.Text>
             <h2>Stock:{stock}</h2>
+            <p></p>
             {/* componente padre pasa funcion al hijo como prop */}
-        <ItemCount stock={stock} initial={1} onAdd={onAdd}/>
+        <ItemCount stock={stock} initial={0} onAdd={onAdd}/>
         <br></br>
-            <Button variant="primary"> Terminar mi compra</Button>
+            
           </Card.Body>
         </Col>
        

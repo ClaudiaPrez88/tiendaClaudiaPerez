@@ -10,7 +10,6 @@ import ProductLoader from "./ProductLoader";
 const ItemDetailContainer = () => {
     const [product, Setproduct] = useState ({})
     const {id} = useParams()
-    const loader = document.getElementById('loader')
     const [loading, SetLoading] = useState(true)
 
     useEffect (()=> {

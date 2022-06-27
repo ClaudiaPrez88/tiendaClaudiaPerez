@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Logo from './components/Logo';
+import {MiProvider} from './components/CartContext'
 
 
 
@@ -15,20 +16,21 @@ const App = () => {
 
   return  (<>
   <BrowserRouter>
-    <Container fluid className='menu-nav'>
+  <MiProvider>
+  <Container fluid className='menu-nav'>
       <Row>
         <Logo/>
         <NavBar/>
       </Row>
     </Container>
-   
-
     <Slider/>
       <Routes>
         <Route path='/' element={<ItemListContainer/>}/>
         <Route path='/detail/:id' element={<ItemDetailContainer/>} />
         <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
       </Routes>
+  </MiProvider>
+ 
   </BrowserRouter>
   </>)
 }

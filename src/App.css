@@ -28,6 +28,17 @@ body{
   left:190px;
 
 }
+.cart-link{
+  display: inline-block;
+}
+.hide  {
+  background-color: salmon;
+  color: white;
+  display: none
+}
+.show {
+display:none;
+}
 .card-title {
   
   font-size: 40px;
@@ -88,6 +99,7 @@ transition-duration: 300ms;
   font-size: 20px; 
   color:#ffffff ;
   text-shadow: 2px 2px #6348C9;
+  text-decoration: none;
   padding-right: 2.5rem;
 }
 .menu {

@@ -14,7 +14,6 @@ function ItemListContainer() {
     // items es nuestro estado / SetItems es la funcion con que modifico el estado
     // usestate es nuestro estado inicial, en este caso un array vacio
     const [items, Setitems] = useState ([])
-    const loader = document.getElementById('loader')
     const [loading, SetLoading] = useState(true)
 
     
