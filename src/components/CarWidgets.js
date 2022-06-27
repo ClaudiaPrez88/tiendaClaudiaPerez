@@ -6,9 +6,9 @@ import {contexto} from './CartContext';
 
  const Car = () => {
   const resultado = useContext(contexto)
-  setTimeout(() => {
-    resultado.setCarrito(['Producto 1'])
-  }, 5000);
+  // setTimeout(() => {
+  //   resultado.estadoCarro(['hola'])
+  // }, 5000);
 
   return (
     <>

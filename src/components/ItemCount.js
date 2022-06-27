@@ -2,6 +2,7 @@ import {Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState ,  useContext} from 'react';
 import {contexto} from './CartContext';
+import AgregarProductoCarrito from './CartContext';
 
 
 
@@ -9,6 +10,7 @@ import {contexto} from './CartContext';
 function ItemCount ({stock,initial,onAdd}) {
   let cantidadEnCarro1 = useContext(contexto)
   // Este será el valorTotal que me llega desde CarWidget
+ 
 
   const [count, setCount] = useState(initial)
   const aumentarContador = () => {
@@ -22,12 +24,17 @@ function ItemCount ({stock,initial,onAdd}) {
   const [isActive, setIsActive] = useState(false);
   const [isOff, setOn] = useState(true);
   const confirmarContador = () => {
-    
       setIsActive(current => !current);
       setOn(current => !current);
       onAdd(count);
+      
+    // Al hacer click en confirmar confirmarContador, cambio el estadoCarro al número del count
+      setTimeout(() => {
+        cantidadEnCarro1.estadoCarro([count]);
+      }, 1000);
     }
-  
+   
+    
     
   return (<>
             <div className={isActive ? 'hide' : ''}>

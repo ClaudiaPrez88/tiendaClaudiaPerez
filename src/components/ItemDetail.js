@@ -4,22 +4,32 @@ import {Card,Container, Col, Row,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import {contexto} from './CartContext';
+
 
 const ItemDetail = ({id, name, image, description, stock}) => {
   const [cant,setCant] = useState(0);
  
-  const [isActive2, setIsActive2] = useState(false);
-    const confirmarCompra = () =>{
-      setIsActive2(current2 => !current2);
-    }
-
 
   // componente padre crea funcion, pasar la información del hijo al padre se llama state uplifting
  const onAdd = (cantidadSeleccionada) =>{
-    setCant(cantidadSeleccionada);
-    const cantidad = [cantidadSeleccionada];
-    // lo almaceno en un estado interno de ItemDetail
-  }
+  setCant(cantidadSeleccionada);
+  const cantidad = [cantidadSeleccionada];
+  // lo almaceno en un estado interno de ItemDetail
+}
+
+
+ 
+  const [isActive2, setIsActive2] = useState(false);
+    const confirmarCompra = () =>{
+      setIsActive2(current2 => !current2);
+      
+
+    }
+
+
+
   
 
 
