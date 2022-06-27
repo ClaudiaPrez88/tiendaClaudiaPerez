@@ -18,6 +18,7 @@ const ItemDetailContainer = () => {
         .then(response => {Setproduct(response)
         SetLoading(false)})
     }, []);
+    
   return (
     <Container className='margen' >
       <Row>
