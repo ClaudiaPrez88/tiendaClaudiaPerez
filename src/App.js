@@ -1,13 +1,12 @@
 import NavBar from './components/NavBar';
 import './App.css';
-import ItemListContainer from './components/ItemListContainer';
 import Slider from './components/Slider';
 import {Container,Row} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemDetailContainer from './components/ItemDetailContainer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
 import Logo from './components/Logo';
 import {MiProvider} from './components/CartContext'
+import Main from './components/Main';
 
 
 
@@ -16,21 +15,16 @@ const App = () => {
 
   return  (<>
   <BrowserRouter>
-  <MiProvider>
-  <Container fluid className='menu-nav'>
-      <Row>
-        <Logo/>
-        <NavBar/>
-      </Row>
-    </Container>
-    <Slider/>
-      <Routes>
-        <Route path='/' element={<ItemListContainer/>}/>
-        <Route path='/detail/:id' element={<ItemDetailContainer/>} />
-        <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
-      </Routes>
-  </MiProvider>
- 
+    <MiProvider>
+        <Container fluid className='menu-nav'>
+            <Row>
+              <Logo/>
+              <NavBar/>
+            </Row>
+        </Container>
+        <Slider/>
+        <Main/>
+    </MiProvider>
   </BrowserRouter>
   </>)
 }

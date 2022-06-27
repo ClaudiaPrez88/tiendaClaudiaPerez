@@ -1,7 +1,7 @@
 import {Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 
 
 // recibe componente hijo funcion del padre
@@ -24,11 +24,7 @@ function ItemCount ({stock,initial,onAdd}) {
       setOn(current => !current);
       onAdd(count);
     }
-    const [isActive2, setIsActive2] = useState(false);
-    const confirmarCompra = () =>{
-      setIsActive2(current2 => !current2);
-    }
-
+    
   return (<>
             <div className={isActive ? 'hide' : ''}>
               <Button variant="outline-primary" onClick={bajarContador}>-</Button>
@@ -37,11 +33,6 @@ function ItemCount ({stock,initial,onAdd}) {
                 <Button variant="outline-primary"  onClick={confirmarContador}>Confirmar</Button> 
             </div> 
             <p className={isOff ? 'show' : ''}>Has agregado  <span>{count}</span> servilletas al carrito de compra</p>
-            <div className={isActive2 ? 'hide' : ''}>
-            <Link to='/cart'><Button variant="primary" onClick={confirmarCompra}>
-               Terminar mi compra/Llevame al carrito de compra 
-            </Button></Link>
-            </div> 
             
          </>
         )}
