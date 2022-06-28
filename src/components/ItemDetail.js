@@ -20,9 +20,10 @@ const {agregarProducto} = useContext(contexto)
   // componente padre crea funcion, pasar la información del hijo al padre se llama state uplifting
  const onAdd = (cantidadSeleccionada) =>{
   setCant(cantidadSeleccionada);
+  console.log('soy la cantidad seleccionada: ' + cantidadSeleccionada)
   const item = { id, name, image, description, stock}
   agregarProducto(item,cantidadSeleccionada)
-  // lo almaceno en un estado interno de ItemDetail
+  console.log(item)
 }
 
 
