@@ -5,17 +5,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { db } from "../config/firebase";
-import { useInformation } from './CartContext';
+import { contexto } from './CartContext';
+
 
 
 const ItemDetail = ({id, name, image, description, stock, price}) => {
-  const [cant,setCant] = useState(true); 
-const context = useInformation()
-console.log(context)
+const [cant,setCant] = useState(true); 
+
+//DECLARO LA VARIABLE PARA CONSUMIR EL CONTEXTO
+const informacionDelContexto = useContext(contexto)
+console.log(informacionDelContexto)
+const {agregarProducto} = useContext(contexto)
 
   // componente padre crea funcion, pasar la información del hijo al padre se llama state uplifting
  const onAdd = (cantidadSeleccionada) =>{
   setCant(cantidadSeleccionada);
+  const item = { id, name, image, description, stock}
+  agregarProducto(item,cantidadSeleccionada)
   // lo almaceno en un estado interno de ItemDetail
 }
 
