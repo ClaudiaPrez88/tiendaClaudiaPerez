@@ -7,6 +7,7 @@ const productos = [
      description:'Servilletas de marca Maki. El paquete contiene 12 servilletas.',
      stock:10,
      category:'Campo',
+     price: 5000,
     },
      {
          id: 2,
@@ -14,7 +15,8 @@ const productos = [
          image:'img/servilletas/M2601.png',
          description:'Servilletas de marca Maki. El paquete contiene 12 servilletas.',
          stock:11,
-         category:'Flores'
+         category:'Flores',
+         price: 5000,
      },
      {
          id: 3,
@@ -22,7 +24,8 @@ const productos = [
          image:'img/servilletas/M9001.png',
          description:'Servilletas de marca Maki. El paquete contiene 12 servilletas.',
          stock:32,
-         category:'Animales'
+         category:'Animales',
+         price: 5000,
      }
  ]
  

@@ -6,6 +6,7 @@ import ItemDetail from './ItemDetail'
 import {Container,Row,Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductLoader from "./ProductLoader";
+import { db } from "../config/firebase";
 
 const ItemDetailContainer = () => {
     const [product, Setproduct] = useState ({})
@@ -22,7 +23,7 @@ const ItemDetailContainer = () => {
   return (
     <Container className='margen' >
       <Row>
-        <Col xs='12'>
+        <Col xs='12' md={{offset: 2, span: 8, offset: 2 }}>
         {loading?<ProductLoader/>: <ItemDetail className='detalle' {...product}/>}
          
         </Col>

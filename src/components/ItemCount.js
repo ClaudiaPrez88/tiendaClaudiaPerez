@@ -2,7 +2,6 @@ import {Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState ,  useContext} from 'react';
 import {contexto} from './CartContext';
-import AgregarProductoCarrito from './CartContext';
 
 
 

@@ -1,20 +1,26 @@
 import React from 'react'
-import { useState,createContext } from 'react'
+import { useState,createContext,useContext  } from 'react'
 
 
 export const contexto = createContext()
 //Provider : Se encarga de establecer el valor del contexto y darle ese valor a todos los otros componentes
 const Provider = contexto.Provider
 
+export const useInformation = () =>{
+    const cart = useContext(contexto)
+    return
+}
+
 // Provider es un componente que viene adentro de un contexto y sirve para 1. Determinar quienes tienen acceso a la informacion y 2. Determina el valor del contexto.
 //useContext : Se encarga de obtener el valor del contexto
 
 export  const MiProvider = ({children}) =>{
-    const [carrito, setCarrito]=useState([]);
+    const [carrito, setCarrito]=useState([1,2,3,4]);
     const[cantidad_total, setCantidadTotal] = useState(0) ;
     const [precio_total, setPrecioTotal]=useState(0);
     const [Carro,estadoCarro]=useState(0);
-    console.log('Soy el carro y tengo la info de la cantidad de productos que hay en el carro de compra ' + Carro)
+    
+    
     
    
     const agregarProducto = (producto,cantidad) => {
@@ -54,4 +60,4 @@ export  const MiProvider = ({children}) =>{
 }
 
 
-export default MiProvider
+

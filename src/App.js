@@ -5,14 +5,12 @@ import {Container,Row} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter} from 'react-router-dom';
 import Logo from './components/Logo';
-import {MiProvider} from './components/CartContext'
+import {MiProvider} from './components/CartContext';
 import Main from './components/Main';
-
-
+import { db } from './config/firebase';
 
 
 const App = () => {
-
   return  (<>
   <BrowserRouter>
     <MiProvider>

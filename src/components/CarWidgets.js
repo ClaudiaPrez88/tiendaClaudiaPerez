@@ -12,7 +12,7 @@ import {contexto} from './CartContext';
 
   return (
     <>
-    <Link to='/cart'>Carrito:{resultado.cantidadTotal}
+    <Link to='/carrito'>Carrito:{resultado.cantidadTotal}
     <img className="carrito" src={'../img/cart.svg'} alt="carrito"></img>
     </Link>
     </>
