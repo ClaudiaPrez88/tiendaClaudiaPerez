@@ -5,11 +5,12 @@ import {contexto} from './CartContext';
 
 
  const Car = () => {
+ 
   const resultado = useContext(contexto)
   // setTimeout(() => {
   //   resultado.estadoCarro(['hola'])
   // }, 5000);
-
+  
   return (
     <>
     <Link to='/carrito'>Carrito:{resultado.cantidadTotal}

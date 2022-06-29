@@ -7,7 +7,9 @@ import {contexto} from './CartContext';
 
 // recibe componente hijo funcion del padre
 function ItemCount ({stock,initial,onAdd}) {
-  let cantidadEnCarro1 = useContext(contexto)
+let contextoEnItemCount = useContext(contexto)
+
+
   // Este será el valorTotal que me llega desde CarWidget
  
 
@@ -28,9 +30,9 @@ function ItemCount ({stock,initial,onAdd}) {
       onAdd(count);
       
     // Al hacer click en confirmar confirmarContador, cambio el estadoCarro al número del count
-      setTimeout(() => {
-        cantidadEnCarro1.estadoCarro([count]);
-      }, 1000);
+      // setTimeout(() => {
+      //   cantidadEnCarro1.estadoCarro([count]);
+      // }, 1000);
     }
    
     
@@ -42,8 +44,9 @@ function ItemCount ({stock,initial,onAdd}) {
                 <Button variant="outline-primary" onClick={aumentarContador}>+</Button>
                 <Button variant="outline-primary"  onClick={confirmarContador}>Confirmar</Button> 
             </div> 
-            <p className={isOff ? 'show' : ''}>Has agregado  <span>{count}</span> servilletas al carrito de compra</p>
-            <p>Carrito:{cantidadEnCarro1.cantidadTotal}</p>
+            <p className={isOff ? 'show' : ''}>Has agregado<span>{count}</span> servilletas al carrito de compra</p>
+            <p>Cantidad agregada:{contextoEnItemCount.cantidadTotal}</p>
+            
             
          </>
         )}

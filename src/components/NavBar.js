@@ -18,7 +18,7 @@ return (
                 <Link to='category/Campo' >Campo </Link>
                 <Link to='category/Flores' >Flores </Link>
                 <Link to='category/Animales' >Animales</Link>
-                {NavBar ? <Car/>: null}
+                 <Car/>
               </Nav>
             </Navbar.Collapse>
           </Container>

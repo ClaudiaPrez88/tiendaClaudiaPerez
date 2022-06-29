@@ -12,38 +12,33 @@ const Provider = contexto.Provider
 
 export  const MiProvider = ({children}) =>{
     const [carrito, setCarrito]=useState([]);
-    const[cantidad_total, setCantidadTotal] = useState(0) ;
-    const [precio_total, setPrecioTotal]=useState(0);
-    const [Carro,estadoCarro]=useState(0);
-    
-
+    const[cantidadTotal, setCantidadTotal] = useState(0) ;
+    const [precioTotal, setPrecioTotal]=useState(0);
+   
     
    
     const agregarProducto = (producto,cantidad) => {
        const copia = [...carrito]
-       const nuevo_producto = {
-        ...producto,
-        cantidad : cantidad
-       }}
-    //    copia.push(nuevo_producto)
-    //    setCarrito(copia)
-    // }
-    const eliminarProducto = (producto) => {
-    
-    }
-    
-    const actualizarCantidad = (producto, cantidad) => {
-      
-    }
 
+       const nuevoProducto = {
+        ...producto,
+        cantidad: cantidad,
+       }
+       
+       copia.push(nuevoProducto)
+       setCarrito(copia) 
+       console.log (nuevoProducto.cantidad) 
+    }
+   
+
+    const eliminarProducto = (producto) => {}
+    const actualizarCantidad = (producto, cantidad) => {}
     const vaciarCarrito = () => {}
     
- 
     const valorDelContexto = {
         carrito:carrito,
-        cantidadTotal : cantidad_total,
-        precioTotal:precio_total,
-        estadoCarro:estadoCarro,
+        cantidadTotal : cantidadTotal,
+        precioTotal:precioTotal,
         agregarProducto : agregarProducto,
     }
 

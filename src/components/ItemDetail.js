@@ -4,7 +4,7 @@ import {Card,Container, Col, Row,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { db } from "../config/firebase";
+// import { db } from "../config/firebase";
 import { contexto } from './CartContext';
 
 
@@ -14,8 +14,12 @@ const [cant,setCant] = useState(true);
 
 //DECLARO LA VARIABLE PARA CONSUMIR EL CONTEXTO
 const informacionDelContexto = useContext(contexto)
-console.log(informacionDelContexto)
 const {agregarProducto} = useContext(contexto)
+
+
+
+
+
 
   // componente padre crea funcion, pasar la información del hijo al padre se llama state uplifting
  const onAdd = (cantidadSeleccionada) =>{
@@ -23,9 +27,11 @@ const {agregarProducto} = useContext(contexto)
   console.log('soy la cantidad seleccionada: ' + cantidadSeleccionada)
   const item = { id, name, image, description, stock}
   agregarProducto(item,cantidadSeleccionada)
-  console.log(item)
-}
+  
+  
 
+
+}
 
  
   const [isActive2, setIsActive2] = useState(false);
