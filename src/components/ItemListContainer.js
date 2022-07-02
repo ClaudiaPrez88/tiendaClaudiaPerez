@@ -7,14 +7,6 @@ import { getProductByCategory } from "../utils/Productos";
 import ProductLoader from "./ProductLoader";
 import {db} from '../config/firebase'
 import {getDocs, collection , query , where } from 'firebase/firestore';
-//getDocs : sirve para traer varios documentos de una colección de productos
-//getDoc : sirve para traer un solo documento en base a su ID
-//doc : Referencia a un documento de la colección
-//query 
-//where : nos sirve para traer todos los productos (where) 
-//colletion
-
-
 
 function ItemListContainer() {
     // items es nuestro estado / SetItems es la funcion con que modifico el estado
@@ -26,7 +18,8 @@ function ItemListContainer() {
    
  useEffect (()=> { 
     const collectionProductos = collection(db, 'productos')
-    const consulta = getDocs(collectionProductos)
+    const filtroDeLaConsulta = query(collectionProductos,where('category','==','Flores'))
+    const consulta = getDocs(filtroDeLaConsulta)
     
     
     .then((resultado)=>{
@@ -34,7 +27,6 @@ function ItemListContainer() {
             const aux = referencia.data()
             aux.id = referencia.id
             return aux
-            
           })
           Setitems(productos_mapeados)
           SetLoading(false)
