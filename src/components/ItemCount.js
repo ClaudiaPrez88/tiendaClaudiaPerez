@@ -25,14 +25,12 @@ let contextoEnItemCount = useContext(contexto)
   const [isActive, setIsActive] = useState(false);
   const [isOff, setOn] = useState(true);
   const confirmarContador = () => {
-      setIsActive(current => !current);
+      if (count > 0 ){
+        setIsActive(current => !current);
       setOn(current => !current);
       onAdd(count);
+      }
       
-    // Al hacer click en confirmar confirmarContador, cambio el estadoCarro al número del count
-      // setTimeout(() => {
-      //   cantidadEnCarro1.estadoCarro([count]);
-      // }, 1000);
     }
    
     
@@ -44,9 +42,7 @@ let contextoEnItemCount = useContext(contexto)
                 <Button variant="outline-primary" onClick={aumentarContador}>+</Button>
                 <Button variant="outline-primary"  onClick={confirmarContador}>Confirmar</Button> 
             </div> 
-            <p className={isOff ? 'show' : ''}>Has agregado<span>{count}</span> servilletas al carrito de compra</p>
-            <p>Cantidad agregada:{contextoEnItemCount.cantidadTotal}</p>
-            
+            <p className={isOff ? 'show' : ''}>Agregado exitosamente al carrito</p>
             
          </>
         )}

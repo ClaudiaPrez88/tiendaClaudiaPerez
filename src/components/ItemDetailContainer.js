@@ -7,12 +7,14 @@ import {Container,Row,Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductLoader from "./ProductLoader";
 import { db } from "../config/firebase";
+import { getDocs, collection } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
     const [product, Setproduct] = useState ({})
     const {id} = useParams()
     const [loading, SetLoading] = useState(true)
 
+ 
     useEffect (()=> {
         SetLoading(true);
         getProductById(parseInt(id))

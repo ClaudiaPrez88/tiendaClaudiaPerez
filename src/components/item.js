@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Col} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
- function Item({id, name, image, description, stock}) {
+
+ function Item({id, name, image, price, stock}) {
+
+
   return (
-   <Col xs={12} md={4}>
+   <Col xs={12} md={3}>
         <div key={id} className='detalle' >
         <p>{name}</p>
-        <img src={`../${image}`} alt={name} ></img>
-        <p>{description}</p>
-        <Link to={`/detail/${id}`}>Ver detalle</Link>
+        <img className='item-image' src={`${image}`} alt={name} ></img>
+        <Link className='boton-detail' to={`/detail/${id}`}>Ver detalle</Link>
         </div>
   </Col> 
   )

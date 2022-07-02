@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import { db } from "../config/firebase";
 import { contexto } from './CartContext';
+import ProductLoader from "./ProductLoader";
 
 
 
@@ -14,26 +15,15 @@ const [cant,setCant] = useState(true);
 
 //DECLARO LA VARIABLE PARA CONSUMIR EL CONTEXTO
 const informacionDelContexto = useContext(contexto)
-const {agregarProducto} = useContext(contexto)
-
-
-
-
+const {agregarProducto, carrito} = useContext(contexto)
 
 
   // componente padre crea funcion, pasar la información del hijo al padre se llama state uplifting
  const onAdd = (cantidadSeleccionada) =>{
   setCant(cantidadSeleccionada);
-  console.log('soy la cantidad seleccionada: ' + cantidadSeleccionada)
-  const item = { id, name, image, description, stock}
+  const item = { id, name, image, description, stock, price}
   agregarProducto(item,cantidadSeleccionada)
-  
-  
-
-
 }
-
- 
   const [isActive2, setIsActive2] = useState(false);
     const confirmarCompra = () =>{
       setIsActive2(current2 => !current2);
@@ -43,7 +33,7 @@ const {agregarProducto} = useContext(contexto)
     <Container className='contenedor-detalle'>
       <Row>
         <Col xs={12} md={5}>
-        <Card.Img variant="top" src={`../${image}`} alt={name} />
+        <Card.Img variant="top" src={`${image}`} alt={name} />
         <div key={id} className='detalle' ></div>
         </Col>
         <Col xs={12} md={7}>
@@ -53,14 +43,15 @@ const {agregarProducto} = useContext(contexto)
             {description}
             </Card.Text>
             <h5>Stock:{stock}</h5>
-            <h5>Precio: {price}</h5>
+            <h5>Precio: {price} USD</h5>
             {/* componente padre pasa funcion al hijo como prop */}
             <ItemCount stock={stock} initial={0} onAdd={onAdd}/>
+            
 
             <div className={isActive2 ? 'hide' : ''}>
-              <Link to='/cart'>
+              <Link to='/carrito'>
                 <Button variant="primary" onClick={confirmarCompra}>
-                Terminar mi compra/Llevame al carrito de compra
+                Carrito de compras
                 </Button>
               </Link>
             </div>  

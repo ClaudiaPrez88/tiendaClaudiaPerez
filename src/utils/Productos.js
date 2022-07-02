@@ -2,30 +2,30 @@
 const productos = [
     {
      id: 1,
-     name: 'Producto 1',
+     name: 'Servilleta Campo',
      image:'img/servilletas/M2201.png',
      description:'Servilletas de marca Maki. El paquete contiene 12 servilletas.',
      stock:10,
      category:'Campo',
-     price: 5000,
+     price: 5,
     },
      {
          id: 2,
-         name: 'Producto 2',
+         name: 'Servilletas flores',
          image:'img/servilletas/M2601.png',
          description:'Servilletas de marca Maki. El paquete contiene 12 servilletas.',
          stock:11,
          category:'Flores',
-         price: 5000,
+         price: 5,
      },
      {
          id: 3,
-         name: 'Producto 3',
+         name: 'Servilleta Animal',
          image:'img/servilletas/M9001.png',
          description:'Servilletas de marca Maki. El paquete contiene 12 servilletas.',
          stock:32,
          category:'Animales',
-         price: 5000,
+         price: 5,
      }
  ]
  

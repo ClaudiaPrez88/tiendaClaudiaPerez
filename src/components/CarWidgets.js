@@ -7,16 +7,17 @@ import {contexto} from './CartContext';
  const Car = () => {
  
   const resultado = useContext(contexto)
-  // setTimeout(() => {
-  //   resultado.estadoCarro(['hola'])
-  // }, 5000);
+  const {agregarProducto, carrito} = useContext(contexto)
   
   return (
-    <>
-    <Link to='/carrito'>Carrito:{resultado.cantidadTotal}
+    
+    <div className='item-carrito'>
+    <Link to='/carrito'>
     <img className="carrito" src={'../img/cart.svg'} alt="carrito"></img>
+     {carrito.map(product =>(<h1>{product.cantidad}</h1>))}
     </Link>
-    </>
+    </div>
+    
   )
 }
 

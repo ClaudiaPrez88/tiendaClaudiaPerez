@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { contexto } from './CartContext';
 import { useState } from 'react';
+import CartDetail from './CartDetail';
+
 
 function Cart() {
     const {carrito} = useContext(contexto)
@@ -40,10 +42,10 @@ function Cart() {
       }
   return (
     <>
-    <Container id='carrito-compras'>
-        <Row>
-            <Col xs='12' md={{ span: 9, offset: 3 }}>
-            <h1>Carrito</h1>
+    <Container id=''>
+        <Row className="justify-content-md-center">
+         <Col md={12}><CartDetail/></Col>
+          <Col xs={12}>
             <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
@@ -56,7 +58,7 @@ function Cart() {
             </form>
             
             <Link className='proceder-compra' to='/checkout' >Proceder a la compra</Link>
-            </Col>
+          </Col>
         </Row>
     </Container>
         

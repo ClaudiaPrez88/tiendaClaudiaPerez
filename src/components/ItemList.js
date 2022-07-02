@@ -10,7 +10,7 @@ function ItemList({productos}) {
     
     productos.map( p=> 
     
-    <Item id={p.id}   name={p.name} image={p.image} description={p.description} stock={p.stock}/>
+    <Item id={p.id}   name={p.name} image={p.image} description={p.description} stock={p.stock} price={p.price}/>
     
     )
     )
