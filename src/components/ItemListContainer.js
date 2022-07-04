@@ -7,6 +7,7 @@ import { getProductByCategory } from "../utils/Productos";
 import ProductLoader from "./ProductLoader";
 import {db} from '../config/firebase'
 import {getDocs, collection , query , where } from 'firebase/firestore';
+import { collectionProductos } from "../config/firebase";
 
 function ItemListContainer() {
     // items es nuestro estado / SetItems es la funcion con que modifico el estado
@@ -17,8 +18,8 @@ function ItemListContainer() {
     const {categoryId} = useParams();
    
  useEffect (()=> { 
-    const collectionProductos = collection(db, 'productos')
-    const filtroDeLaConsulta = query(collectionProductos,where('category','==','Flores'))
+
+    const filtroDeLaConsulta = query(collectionProductos,where('category','==',categoryId))
     const consulta = getDocs(filtroDeLaConsulta)
     
     

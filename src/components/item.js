@@ -19,7 +19,6 @@ import {getDocs, collection , query , where } from 'firebase/firestore';
             return aux
             
           })
-          console.log(productos_mapeados)
     
     })
     

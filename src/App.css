@@ -10,6 +10,10 @@ body{
   height: auto;
   margin: 10px;
 }
+#checkout{
+  margin-top: 50px;
+  margin-top: 50px;
+}
 .item-image{
   width: 200px;
   margin: 0 auto;
@@ -155,7 +159,7 @@ transition-duration: 300ms;
   padding-right: 2.5rem;
 }
 .menu {
-  background-color: #FFE3FA;
+  background-color: #FFE3FA !important;
 }
 
 .fondo1{
@@ -190,4 +194,13 @@ transition-duration: 300ms;
   color: #6348c9;
 }
 
+
+@media only screen and (max-width: 1014px) {
+
+}
+
+@media only screen and (max-width: 767px) {
+
+
+}
 

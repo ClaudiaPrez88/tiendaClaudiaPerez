@@ -4,10 +4,8 @@ import Slider from './components/Slider';
 import {Container,Row} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter} from 'react-router-dom';
-import Logo from './components/Logo';
 import {MiProvider} from './components/CartContext';
 import Main from './components/Main';
-import { db } from './config/firebase';
 
 
 const App = () => {
@@ -16,7 +14,6 @@ const App = () => {
     <MiProvider>
         <Container fluid className='menu-nav'>
             <Row>
-              <Logo/>
               <NavBar/>
             </Row>
         </Container>
