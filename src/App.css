@@ -172,10 +172,12 @@ transition-duration: 300ms;
 .slider .carousel-caption h5 {
   font-family: 'Coustard', serif;
   font-size: 80px;
+  color: #6348c9;
 }
 .slider .carousel-caption p {
   font-family: 'JetBrains Mono', monospace;
   font-size: 20px;
+  color: #6348c9;
 }
 
 .carousel-caption {
@@ -195,12 +197,5 @@ transition-duration: 300ms;
 }
 
 
-@media only screen and (max-width: 1014px) {
 
-}
-
-@media only screen and (max-width: 767px) {
-
-
-}
 

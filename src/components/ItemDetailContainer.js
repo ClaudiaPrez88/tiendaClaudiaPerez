@@ -13,16 +13,17 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState ({})
     const {id} = useParams()
     const [loading, SetLoading] = useState(true)
-  console.log( {...product})
+  
  
     useEffect (()=> {
-        SetLoading(false);
+        
         const collectionProductos = collection(db,'productos')
         const refeDelDoc = doc(collectionProductos,'1')
         const consulta = getDoc(refeDelDoc)
         consulta.then(resultado=>{
           const producto = resultado.data()
           setProduct(producto)
+          SetLoading(false);
         })
         .catch((error)=>{
           console.log(error)

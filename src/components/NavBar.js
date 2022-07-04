@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
 return (
       <Col xs={12}>
-        <Navbar bg="light" expand="lg" className='menu'>
+        <Navbar expand="lg" className='menu'>
           <Container>
             <Navbar.Brand href="#home">
             <Link to='/'>

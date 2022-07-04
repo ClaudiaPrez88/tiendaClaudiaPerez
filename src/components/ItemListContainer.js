@@ -18,11 +18,12 @@ function ItemListContainer() {
     const {categoryId} = useParams();
    
  useEffect (()=> { 
-
-    const filtroDeLaConsulta = query(collectionProductos,where('category','==',categoryId))
+    SetLoading(true);
+    const filtroDeLaConsulta = categoryId
+    ? query(collectionProductos,where('category','==',categoryId))
+    : collectionProductos
+    
     const consulta = getDocs(filtroDeLaConsulta)
-    
-    
     .then((resultado)=>{
         const productos_mapeados = resultado.docs.map(referencia=>{
             const aux = referencia.data()
@@ -35,22 +36,7 @@ function ItemListContainer() {
     
     .catch((error)=>{
         console.log('error')
-    })
-    // SetLoading(true);
-    
-    //     if(!categoryId)
-    //      {customFetch(2000,productos)
-    //         .then(resultado => {
-    //         Setitems(resultado)
-    //         SetLoading(false)
-    //     })}
-    //     else 
-    //     {getProductByCategory(categoryId)
-    //         .then(response => {
-    //             Setitems(response)
-    //             SetLoading(false)}) 
-    //     }  
-       
+    }) 
     }, [categoryId]);
 
     return (
