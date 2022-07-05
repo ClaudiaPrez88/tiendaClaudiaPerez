@@ -9,9 +9,12 @@ import React from 'react'
 function CartDetail() {
     const ctxCartItemDetail = useContext(contexto)
     const {eliminarProducto, carrito} = useContext(contexto)
+   
     const manejarClick = (elemento) => {
-        eliminarProducto()
-      }
+      eliminarProducto()
+    } 
+      
+    
    
   return (
     <>
@@ -30,7 +33,7 @@ function CartDetail() {
                 <p> {`$ ${product.price} USD`}</p>
                 </Col>
                 <Col  xs={2}>
-                <Button href="#"  className="" onClick={eliminarProducto}>
+                <Button href="#"  className="" >
                 <span>Remover</span>
                 </Button>
                 </Col>
@@ -43,7 +46,7 @@ function CartDetail() {
             <p>Total:</p>
           </Col>
           <Col xs={2}>
-          <Button href="#"  className="">
+          <Button href="#"  className="" >
               Vaciar carrito
                 </Button>
           </Col>

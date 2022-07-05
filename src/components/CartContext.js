@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState,createContext  } from 'react'
+import CartDetail from './CartDetail'
 
 
 export const contexto = createContext()
@@ -15,26 +16,21 @@ export  const MiProvider = ({children}) =>{
     const[cantidadTotal, setCantidadTotal] = useState(0) ;
     const [precioTotal, setPrecioTotal]=useState(0);
    
-    
-   
     const agregarProducto = (producto,cantidad) => {
        const copia = [...carrito]
-
-       const nuevoProducto = {
-        ...producto,
-        cantidad: cantidad,
-       }
-       
+       const nuevoProducto = {...producto,cantidad: cantidad,}
        copia.push(nuevoProducto)
        setCarrito(copia) 
        setCantidadTotal(cantidadTotal+cantidad)
        setPrecioTotal(precioTotal+cantidad*producto.precio)
-    }
+    };
+ 
+  
    
-
-    const eliminarProducto = (producto) => {}
-    const actualizarCantidad = (producto, cantidad) => {}
-    const vaciarCarrito = () => {}
+    // const eliminarProducto = (producto) => {};
+    // const actualizarCantidad = (producto, cantidad) => {};
+    const vaciarCarrito = (producto) => {};
+    
     
     const valorDelContexto = {
         carrito:carrito,

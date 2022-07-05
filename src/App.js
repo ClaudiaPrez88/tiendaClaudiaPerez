@@ -6,6 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter} from 'react-router-dom';
 import {MiProvider} from './components/CartContext';
 import Main from './components/Main';
+import productos from './utils/Productos';
+import { addDoc } from 'firebase/firestore';
+import { collectionProductos } from './config/firebase';
+
+// productos.map((producto)=> addDoc(collectionProductos,producto))
 
 
 const App = () => {
