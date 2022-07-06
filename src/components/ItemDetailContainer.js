@@ -19,15 +19,15 @@ const ItemDetailContainer = () => {
         const refeDelDoc = doc(collectionProductos,id)
         const consulta = getDoc(refeDelDoc)
         consulta.then(resultado=>{
-          const producto = resultado.data()
-          setProduct(producto)
+          setProduct({
+            id: resultado.id,
+            ...resultado.data()
+          })
           SetLoading(false);
         })
         .catch((error)=>{
-          console.log(error)
-          
-        })
-    }, []);
+          console.log(error)})
+    }, [id]);
     
   return (
     <Container className='margen' >

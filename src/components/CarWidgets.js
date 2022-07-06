@@ -14,7 +14,7 @@ import {contexto} from './CartContext';
     <div className='item-carrito'>
     <Link to='/carrito'>
     <img className="carrito" src={'../img/cart.svg'} alt="carrito"></img>
-     {carrito.map(product =>(<h1>{product.cantidad}</h1>))}
+     <h1>{carrito.length}</h1>
     </Link>
     </div>
     
