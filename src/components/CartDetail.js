@@ -32,6 +32,7 @@ function CartDetail() {
   return (
     <>
     <div className="carrito-compras">
+      
           {carrito.map((product,i) => {
             return( 
             <div className="producto-carrito">
@@ -51,16 +52,24 @@ function CartDetail() {
                 <span>Remover</span>
                 </Button>
                 </Col>
-                <Col xs={8}></Col>
-          <Col xs={2}>  <p>Total: {`$ ${precioTotal} USD`}</p></Col>
-          <Col xs={2}>
-            <Button  className="" onClick={vaciar}>  Vaciar carrito </Button>
-          </Col>
-       </Row>
+                </Row>
              
             </div>  
-          )})} 
+          )})}
+          <Row className="justify-content">
+          <Col xs={8}></Col>
+          <Col xs={2}>  <p>Total: {`$ ${precioTotal} USD`}</p></Col>
+          <Col xs={2}>
+          <Button  className="" onClick={vaciar}>
+              Vaciar carrito
+                </Button>
+          </Col>
+          </Row>
+         
+       
     </div>
+    
+    
     </>
   )
 }
