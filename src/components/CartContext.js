@@ -10,15 +10,6 @@ export  const MiProvider = ({children}) =>{
     const [carrito, setCarrito]=useState([]);
     const[cantidadTotal, setCantidadTotal] = useState(0) ;
     const [precioTotal, setPrecioTotal]=useState(0);
-   
-    // const agregarProducto = (producto,cantidad) => {
-    //    const copia = [...carrito]
-    //    const nuevoProducto = {...producto,cantidad: cantidad,}
-    //    copia.push(nuevoProducto)
-    //    setCarrito(copia) 
-    //    setCantidadTotal(cantidadTotal+cantidad)
-    //    setPrecioTotal(precioTotal+cantidad*producto.precio)
-    // };
 
     const agregarProducto = (producto, cantidad) => {
         if (isOncarrito(producto.id)) {
@@ -41,27 +32,17 @@ export  const MiProvider = ({children}) =>{
                 return product;
             }
         });
+        console.log(newProducts)
         setCarrito(newProducts);
     };
 
-    const totalPrice = () => {  return 10;  };
-
-    const totalUnidades = () => {  return 5; };
-
-    const deleteItem = (id) => {
-        setCarrito(carrito.filter((product) => product.id !== id));
-    };
+   
+    const deleteItem = (id) => {setCarrito(carrito.filter((producto) => producto.id !== id))}
 
     const deleteAll = (_) => setCarrito([]);
  
     
     
-    const valorDelContexto = {
-        carrito:carrito,
-        cantidadTotal : cantidadTotal,
-        precioTotal:precioTotal,
-        agregarProducto : agregarProducto,
-    }
 
     
     return(
@@ -69,10 +50,8 @@ export  const MiProvider = ({children}) =>{
             agregarProducto,
             carrito,
             deleteItem,
-            totalPrice,
             deleteAll,
-            totalUnidades,
-            valorDelContexto
+            precioTotal
         }}
     >
             {children}

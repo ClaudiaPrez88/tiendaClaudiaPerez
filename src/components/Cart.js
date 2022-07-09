@@ -1,15 +1,24 @@
-import React from 'react'
-import {Container,Row,Col} from 'react-bootstrap'
+import React, { useEffect } from 'react'
+import {Container,Row,Col, Button} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { contexto } from './CartContext';
-import { useState } from 'react';
+import { useState,useRef} from 'react';
 import CartDetail from './CartDetail';
 
 
 function Cart() {
     const {carrito} = useContext(contexto)
+    const {vacio,setVacio} = useState()
+    function createMarkup() { 
+    if (carrito.length == 0){
+      return {__html: 'Tu carrito esta vacio'};
+    }
+  };
+ 
+ 
+
 
     const [nombre,setNombre] = useState("")
     const [tel,setTel] = useState("")
@@ -25,28 +34,24 @@ function Cart() {
         // console.log(usuario)
     }
 
-    const handleClick = (e) => {
-        e.preventDefault()
-      }
+    const handleClick = (e) => { e.preventDefault()}
     
-      const handleNombreChange = (e) => {
-        setNombre(e.target.value)
-      }
-    
-      const handleEmailChange = (e) => {
-        setEmail(e.target.value)
-      }
-    
-      const handleTelChange = (e) => {
-        setTel(e.target.value)
-      }
+    const handleNombreChange = (e) => { setNombre(e.target.value)}
+  
+    const handleEmailChange = (e) => {  setEmail(e.target.value) }
+  
+    const handleTelChange = (e) => { setTel(e.target.value)}
+
   return (
     <>
-    <Container id=''>
+    <Container>
         <Row className="justify-content-md-center">
-         <Col md={12}><CartDetail/></Col>
+          <Col md={12}><CartDetail/>
+          <p dangerouslySetInnerHTML={createMarkup()}></p>
+          </Col>
           <Col xs={12}>
             <p>
+            
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <form onSubmit={handleSubmit}>

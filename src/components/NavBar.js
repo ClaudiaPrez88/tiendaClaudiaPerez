@@ -11,7 +11,7 @@ return (
       <Col xs={12}>
         <Navbar expand="lg" className='menu'>
           <Container>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand>
             <Link to='/'>
             <img src='../img/logo.png' className='logo' alt='logo'></img>
             </Link>

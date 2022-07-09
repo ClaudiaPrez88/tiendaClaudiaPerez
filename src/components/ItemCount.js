@@ -8,13 +8,15 @@ import {contexto} from './CartContext';
 // recibe componente hijo funcion del padre
 function ItemCount ({stock,initial,onAdd}) {
 let contextoEnItemCount = useContext(contexto)
+const {carrito} = useContext(contexto)
 
 
   // Este será el valorTotal que me llega desde CarWidget
- 
-
+  
+  
   const [count, setCount] = useState(initial)
   const aumentarContador = () => {
+    
     if (count < stock){ setCount (count + 1)} }
   const bajarContador = () => {
     if (count > 0){setCount(count - 1)}}
@@ -25,7 +27,7 @@ let contextoEnItemCount = useContext(contexto)
   const [isActive, setIsActive] = useState(false);
   const [isOff, setOn] = useState(true);
   const confirmarContador = () => {
-      if (count > 0 ){
+      if (count > 0 )  {
         setIsActive(current => !current);
       setOn(current => !current);
       onAdd(count);

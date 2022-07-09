@@ -18,6 +18,7 @@ const informacionDelContexto = useContext(contexto)
 const {agregarProducto, carrito} = useContext(contexto)
 
 
+
   // componente padre crea funcion, pasar la información del hijo al padre se llama state uplifting
  const onAdd = (cantidadSeleccionada) =>{
   setCant(cantidadSeleccionada);
