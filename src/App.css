@@ -71,10 +71,10 @@ body{
   display: inline-block;
 }
 .hide  {
-  display: none
+  display: none !important;
 }
 .show {
-display:none;
+display:block !important;
 }
 #carrito-compras{
   margin: 50px 0px;

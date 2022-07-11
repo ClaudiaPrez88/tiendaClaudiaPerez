@@ -1,39 +1,24 @@
-import react, { useState } from "react";
-import { useContext } from 'react';
+import react, { useContext} from "react";
 import { contexto } from './CartContext';
 import {Button, Col, Row} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from "react-router-dom";
+import TotalCart from "./TotalCart";
 
 import React from 'react'
 
 function CartDetail() {
-    const ctxCartItemDetail = useContext(contexto);
-    const {deleteItem, carrito, deleteAll} = useContext(contexto);
- 
+    const {deleteItem, carrito} = useContext(contexto);
+   
     function createMarkup() { 
       if (carrito.length == 0){
         return {__html:  'Tu carrito esta vacio, agrega algún producto para hacernos feliz  <a class="boton-detail" href="/">Ir al catálogo</a>'};
       }
     };
-
-    const vaciar = () => {
-      deleteAll();
-    }
+  
     const borrar = () => {
       deleteItem();
     }
    
-     const precio = carrito.map((item => item.cantidad*item.price))
-     let precioTotal = 0;
-      for (let i = 0; i < precio.length; i++) {
-        precioTotal += precio[i];
-      }
-
-
-    
-    
-    
    
   return (
     <>
@@ -58,22 +43,17 @@ function CartDetail() {
                 <span>Remover</span>
                 </Button>
                 </Col>
+                <TotalCart/>
                 </Row>
-             
             </div>  
-          )})}
-          <Row className="justify-content">
-          <Col xs={8}>
-         
-          <p className="text-center" dangerouslySetInnerHTML={createMarkup()}></p>
-          </Col>
-          <Col xs={2}>  <p>Total: {`$ ${precioTotal} USD`}</p></Col>
-          <Col xs={2}>
-          <Button  className="" onClick={vaciar}>
-              Vaciar carrito
-                </Button>
-          </Col>
-          </Row>
+          )})}           
+          
+              <Row>
+              <Col xs={12}>
+                <p className="text-center" dangerouslySetInnerHTML={createMarkup()}></p>
+              </Col>
+              
+              </Row>
          
        
     </div>
