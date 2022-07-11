@@ -11,7 +11,7 @@ function CartDetail() {
    
     function createMarkup() { 
       if (carrito.length == 0){
-        return {__html:  'Tu carrito esta vacio, agrega algún producto para hacernos feliz  <a class="boton-detail" href="/">Ir al catálogo</a>'};
+        return {__html:  'Tu carrito esta vacio, agrega algún producto para hacernos feliz'};
       }
     };
   
@@ -51,6 +51,7 @@ function CartDetail() {
               <Row>
               <Col xs={12}>
                 <p className="text-center" dangerouslySetInnerHTML={createMarkup()}></p>
+                <a class="boton-detail" href="/">Ir al catálogo</a>
               </Col>
               
               </Row>
