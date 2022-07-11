@@ -25,10 +25,7 @@ const {agregarProducto, carrito} = useContext(contexto)
   const item = { id, name, image, description, stock, price}
   agregarProducto(item,cantidadSeleccionada)
 }
-  const [isActive2, setIsActive2] = useState(false);
-    const confirmarCompra = () =>{
-      setIsActive2(current2 => !current2);
-    }
+
 
   return (
     <Container className='contenedor-detalle'>
@@ -48,14 +45,6 @@ const {agregarProducto, carrito} = useContext(contexto)
             {/* componente padre pasa funcion al hijo como prop */}
             <ItemCount stock={stock} initial={0} onAdd={onAdd}/>
             
-
-            <div className={isActive2 ? 'hide' : ''}>
-              <Link to='/carrito'>
-                <Button variant="primary" onClick={confirmarCompra}>
-                Carrito de compras
-                </Button>
-              </Link>
-            </div>  
           </Card.Body>
         </Col>
       </Row>

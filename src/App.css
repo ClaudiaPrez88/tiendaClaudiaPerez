@@ -19,6 +19,9 @@ body{
   margin: 0 auto;
   display: block;
 }
+.text-center{
+  text-align: center;
+}
 .detalle p {
   text-align: center;
 }
@@ -31,7 +34,16 @@ body{
   width: 150px;
   text-decoration: none;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 10px;
+}
+.btn-outline-primary {
+  color: #C43A96 !important;
+  border-color: #C43A96 !important;
+}
+.btn-outline-primary:hover {
+  color: #fff  !important;
+  background-color:#C43A96 !important;
+  border-color:#C43A96 !important;
 }
 .boton-detail:hover{
   color:#ffffff;
@@ -89,9 +101,10 @@ display:none;
   margin-top: 20px;
 }
 .carrito-compras{
-  background: #ffffff;
+  background: #f2f2f2;
     margin:30px 0px;
     border-radius: 30px;
+    padding: 20px;
 }
 .carrito-compras img{
   width: 100px;
@@ -156,6 +169,14 @@ transition-duration: 300ms;
   text-shadow: 2px 2px #6348C9;
   text-decoration: none;
   padding-right: 2.5rem;
+}
+button.btn.btn-primary {
+  margin: 10px 0px;
+  background: #6348C9;
+  border: 1px solid #6348C9;
+}
+.navbar-nav a:hover{
+  color:#e0e0e0 ;
 }
 .menu {
   background-color: #FFE3FA !important;

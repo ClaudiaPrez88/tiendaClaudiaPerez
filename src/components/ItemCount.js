@@ -2,6 +2,7 @@ import {Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState ,  useContext} from 'react';
 import {contexto} from './CartContext';
+import { Link } from 'react-router-dom';
 
 
 
@@ -9,23 +10,18 @@ import {contexto} from './CartContext';
 function ItemCount ({stock,initial,onAdd}) {
 let contextoEnItemCount = useContext(contexto)
 const {carrito} = useContext(contexto)
-
-
-  // Este será el valorTotal que me llega desde CarWidget
-  
-  
-  const [count, setCount] = useState(initial)
-  const aumentarContador = () => {
-    
-    if (count < stock){ setCount (count + 1)} }
+const [isActive2, setIsActive2] = useState(false);
+    const confirmarCompra = () =>{
+      setIsActive2(current2 => !current2);
+    }
+const [count, setCount] = useState(initial)
+const aumentarContador = () => {
+   if (count < stock){ setCount (count + 1)} }
   const bajarContador = () => {
     if (count > 0){setCount(count - 1)}}
-  // const confirmarContador = (e) =>{ 
-  //   // // 4.El componente hijo ejecuta la funcion que trajo del padre
-  //   onAdd(count)
-  // }
-  const [isActive, setIsActive] = useState(false);
-  const [isOff, setOn] = useState(true);
+ 
+const [isActive, setIsActive] = useState(false);
+const [isOff, setOn] = useState(true);
   const confirmarContador = () => {
       if (count > 0 )  {
         setIsActive(current => !current);
@@ -44,7 +40,14 @@ const {carrito} = useContext(contexto)
                 <Button variant="outline-primary" onClick={aumentarContador}>+</Button>
                 <Button variant="outline-primary"  onClick={confirmarContador}>Confirmar</Button> 
             </div> 
-            <p className={isOff ? 'show' : ''}>Agregado exitosamente al carrito</p>
+            <p className={isOff ? 'show' : ''}>Producto agregado exitosamente</p>
+            <div className={isOff ? 'show' : ''}>
+              <Link to='/carrito'>
+                <Button variant="primary" onClick={confirmarCompra}>
+                Terminar mi compra <img class="carrito" src="../img/cart.svg" alt="carrito"></img>
+                </Button>
+              </Link>
+            </div>  
             
          </>
         )}

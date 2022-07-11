@@ -11,15 +11,8 @@ import CartDetail from './CartDetail';
 function Cart() {
     const {carrito} = useContext(contexto)
     const {vacio,setVacio} = useState()
-    function createMarkup() { 
-    if (carrito.length == 0){
-      return {__html: 'Tu carrito esta vacio'};
-    }
-  };
+   
  
- 
-
-
     const [nombre,setNombre] = useState("")
     const [tel,setTel] = useState("")
     const [email,setEmail] = useState("")
@@ -47,7 +40,6 @@ function Cart() {
     <Container>
         <Row className="justify-content-md-center">
           <Col md={12}><CartDetail/>
-          <p dangerouslySetInnerHTML={createMarkup()}></p>
           </Col>
           <Col xs={12}>
             <p>
