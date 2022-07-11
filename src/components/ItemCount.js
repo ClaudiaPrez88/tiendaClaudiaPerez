@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 function ItemCount ({stock,initial,onAdd}) {
 let contextoEnItemCount = useContext(contexto)
 const {carrito} = useContext(contexto)
+
 const [isActive2, setIsActive2] = useState(false);
     const confirmarCompra = () =>{
       setIsActive2(current2 => !current2);
@@ -40,8 +41,8 @@ const [isOff, setOn] = useState(true);
                 <Button variant="outline-primary" onClick={aumentarContador}>+</Button>
                 <Button variant="outline-primary"  onClick={confirmarContador}>Confirmar</Button> 
             </div> 
-            <p className={isOff ? 'show' : ''}>Producto agregado exitosamente</p>
-            <div className={isOff ? 'show' : ''}>
+            <p className={isOff ? 'hide' : ''}>Producto agregado exitosamente</p>
+            <div className={isOff ? 'hide' : ''}>
               <Link to='/carrito'>
                 <Button variant="primary" onClick={confirmarCompra}>
                 Terminar mi compra <img class="carrito" src="../img/cart.svg" alt="carrito"></img>

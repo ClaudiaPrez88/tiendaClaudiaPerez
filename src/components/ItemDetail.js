@@ -37,9 +37,7 @@ const {agregarProducto, carrito} = useContext(contexto)
         <Col xs={12} md={7}>
         <Card.Body>
             <Card.Title>{name}</Card.Title>
-            <Card.Text>
-            {description}
-            </Card.Text>
+            <Card.Text>{description} </Card.Text>
             <h5>Stock:{stock}</h5>
             <h5>Precio: {price} USD</h5>
             {/* componente padre pasa funcion al hijo como prop */}
