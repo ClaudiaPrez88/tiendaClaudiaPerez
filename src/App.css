@@ -36,6 +36,9 @@ body{
   padding: 10px;
   border-radius: 10px;
 }
+.carousel-caption {
+  text-align: left;
+}
 .btn-outline-primary {
   color: #C43A96 !important;
   border-color: #C43A96 !important;

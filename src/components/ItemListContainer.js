@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemList from './ItemList'
 import {Container, Row} from 'react-bootstrap';
 import { useParams } from "react-router-dom";
-import { getProductByCategory } from "../utils/Productos";
 import ProductLoader from "./ProductLoader";
-import {db} from '../config/firebase'
-import {getDocs, collection , query , where } from 'firebase/firestore';
+import {getDocs, query , where } from 'firebase/firestore';
 import { collectionProductos } from "../config/firebase";
 
 function ItemListContainer() {

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import {Container,Row,Col, Button} from 'react-bootstrap'
+import {Container,Row,Col, Button,Form} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
@@ -38,23 +38,40 @@ function Cart() {
   return (
     <>
     <Container>
-        <Row className="justify-content-md-center">
+        <Row>
           <Col md={12}><CartDetail/>
           </Col>
-          <Col xs={12}>
-            <p>
-            
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+          <Col xs={12} md={{ span: 6,offset: 3  }}>
             <form onSubmit={handleSubmit}>
+              <Form.Group className="mb-3" controlId="formBasicName">
+                <Form.Label>Nombre</Form.Label>
+                <Form.Control onChange={handleNombreChange} type='text' id='nombre' placeholder='Nombre...' value={nombre} />
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control onChange={handleEmailChange} type='email' id='email' placeholder='Email...' />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicTel">
+              <Form.Label>Teléfono</Form.Label>
+                <Form.Control onChange={handleTelChange} type='number' id='telefono place
+                Tel...' placeholder='Teléfono' />
+              </Form.Group>
+              <Link className='proceder-compra' to='/checkout' >Proceder a la compra</Link>
+            </form>
+            {/* <form onSubmit={handleSubmit}>
                 <div><input onChange={handleNombreChange} type='text' id='nombre' placeholder='Nombre...' value={nombre}/></div>
                <div><input onChange={handleEmailChange} type='email' id='email' placeholder='Email...'/></div> 
                <div><input onChange={handleTelChange} type='number' id='telefono place
                 Tel...' placeholder='Teléfono'/></div>
                 <button>Comprar</button>
-            </form>
+            </form> 
+            <Link className='proceder-compra' to='/checkout' >Proceder a la compra</Link>*/}
             
-            <Link className='proceder-compra' to='/checkout' >Proceder a la compra</Link>
+            
           </Col>
         </Row>
     </Container>

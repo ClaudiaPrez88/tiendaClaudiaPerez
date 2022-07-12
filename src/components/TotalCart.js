@@ -1,10 +1,11 @@
-import React , { useContext} from 'react'
+import React , { useContext, useState} from 'react'
 import {Button, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { contexto } from './CartContext';
 
 function TotalCart() {
     const { carrito, deleteAll} = useContext(contexto);
+    
 
     const vaciar = () => {
         deleteAll();
