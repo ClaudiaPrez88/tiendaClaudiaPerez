@@ -38,6 +38,7 @@ body{
 }
 .carousel-caption {
   text-align: left;
+  width: 600px;
 }
 .btn-outline-primary {
   color: #C43A96 !important;
@@ -82,9 +83,7 @@ display:block;
 #carrito-compras{
   margin: 50px 0px;
 }
-.proceder-compra{
-  display: block;
-}
+
 .card-title {
   
   font-size: 40px;
@@ -105,9 +104,15 @@ display:block;
 }
 .carrito-compras{
   background: #f2f2f2;
-    margin:30px 0px;
+  margin: 30px 0px;
     border-radius: 30px;
     padding: 20px;
+}
+.carrito-vacio{
+  background: #f2f2f2;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 30px 0px;
 }
 .carrito-compras img{
   width: 100px;
@@ -196,6 +201,8 @@ button.btn.btn-primary {
   font-family: 'Coustard', serif;
   font-size: 80px;
   color: #6348c9;
+  background: #ffe3fa;
+    width: 426px;
 }
 .slider .carousel-caption p {
   font-family: 'JetBrains Mono', monospace;
@@ -215,8 +222,58 @@ button.btn.btn-primary {
 }
 
 .carousel-caption {
-  text-align: left;
+  text-align: left !important;
   color: #6348c9;
+}
+.anuncio{
+  font-size: 20px;
+ }
+ .form{
+  margin: 30px 0px;
+ }
+ .text-form{
+  font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    color: #6348c9;
+ }
+ input[type="number"] ,input[type="text"]{
+  width: 300px;
+  margin: 10px 0px;
+}
+@media only screen and (max-width: 1043px) {
+  .slider .carousel-caption h5 {
+    width: 330px;
+}
+.slider img.d-block.w-100 {
+  width: 30%!important;
+}
+.carousel-caption {
+  position: absolute;
+  top: 30px;
+  bottom: initial;
+  width: 400px;
+}
+}
+@media only screen and (max-width: 991px) {
+  .slider .carousel-caption h5 {
+    font-size: 60px;
+}
+.carousel-caption {
+  width: 200px;
+  top: 0px;
+}
+}
+@media only screen and (max-width: 767px) {
+  .slider .carousel-caption h5 {
+    font-size: 40px;
+    width: 200px;
+}
+.carousel-caption {
+  width: 300px;
+}
+.slider img.d-block.w-100 {
+  opacity: 0;
+}
 }
 
 

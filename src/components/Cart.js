@@ -1,77 +1,73 @@
-import React, { useEffect } from 'react'
-import {Container,Row,Col, Button,Form} from 'react-bootstrap'
+import React from 'react'
+import {Container,Row,Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { contexto } from './CartContext';
-import { useState,useRef} from 'react';
+import { useState } from 'react';
 import CartDetail from './CartDetail';
+import { db } from "../config/firebase";
+import { collection, addDoc,serverTimestamp } from "firebase/firestore";
+import Formulario from './Formulario';
+
 
 
 function Cart() {
-    const {carrito} = useContext(contexto)
-    const {vacio,setVacio} = useState()
-   
- 
-    const [nombre,setNombre] = useState("")
-    const [tel,setTel] = useState("")
-    const [email,setEmail] = useState("")
+    const {carrito,precioTotal} = useContext(contexto)
+    const [data, setData] = useState({ name: '', email: '', phone: '' });
+    const [orderId, setOrderId] = useState('');
 
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-        // console.dir(e.target.elements.nombre.value)
-        // const nombre = e.target.elements.nombre.value
-        // const tel = e.target.elements.telefono.value
-        // const email = e.target.elements.email.value
-        // const usuario = {nombre, tel, email}
-        // console.log(usuario)
-    }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setData({
+            ...data,
+            [name]: value,
+        });
+    };
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const objOrden = {
+          buyer: {
+              name: data.name,
+              phone: data.phone,
+              email: data.email,
+          },
+          items : [{id:1,titulo:"Compra Servilletas"}],
+          carrito,
+          precioTotal: precioTotal(),
+          date: serverTimestamp(),
+      };
 
-    const handleClick = (e) => { e.preventDefault()}
-    
-    const handleNombreChange = (e) => { setNombre(e.target.value)}
-  
-    const handleEmailChange = (e) => {  setEmail(e.target.value) }
-  
-    const handleTelChange = (e) => { setTel(e.target.value)}
+      const ref = collection(db, 'orders');
+      addDoc(ref, objOrden).then((response) => {
+          setOrderId(response.id);
+      });
+  };
+  if (orderId !== '') {
+      return  <Container id="checkout">
+      <Row>
+          <Col xs={12}>
+         <h4 className='anuncio'>Gracias por tu compra, tu número de envío es: {orderId}</h4>
+          </Col>
+      </Row>
+  </Container>;
+  }
 
   return (
     <>
-    <Container>
+    <Container id=''>
         <Row>
-          <Col md={12}><CartDetail/>
-          </Col>
-          <Col xs={12} md={{ span: 6,offset: 3  }}>
-            <form onSubmit={handleSubmit}>
-              <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Nombre</Form.Label>
-                <Form.Control onChange={handleNombreChange} type='text' id='nombre' placeholder='Nombre...' value={nombre} />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control onChange={handleEmailChange} type='email' id='email' placeholder='Email...' />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicTel">
-              <Form.Label>Teléfono</Form.Label>
-                <Form.Control onChange={handleTelChange} type='number' id='telefono place
-                Tel...' placeholder='Teléfono' />
-              </Form.Group>
-              <Link className='proceder-compra' to='/checkout' >Proceder a la compra</Link>
-            </form>
-            {/* <form onSubmit={handleSubmit}>
-                <div><input onChange={handleNombreChange} type='text' id='nombre' placeholder='Nombre...' value={nombre}/></div>
-               <div><input onChange={handleEmailChange} type='email' id='email' placeholder='Email...'/></div> 
-               <div><input onChange={handleTelChange} type='number' id='telefono place
-                Tel...' placeholder='Teléfono'/></div>
-                <button>Comprar</button>
-            </form> 
-            <Link className='proceder-compra' to='/checkout' >Proceder a la compra</Link>*/}
+         <Col md={12}><CartDetail/></Col>
+          <Col md={{ span: 6, offset: 3 }}>
+            <p>
+            Escribe tus datos en el formulario y haz click en el botón de proceder al a compra para enviar tu pedido. Luego de esto, te enviaremos un email con las instrucciones y datos hacer tu transferencia y finalizar tu compra. 
+            </p>
+            <Formulario
+                        handleChange={handleChange}
+                        data={data}
+                        handleSubmit={handleSubmit}
+                    />
             
-            
+          
           </Col>
         </Row>
     </Container>

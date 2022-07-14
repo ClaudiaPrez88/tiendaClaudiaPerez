@@ -9,18 +9,16 @@ import React from 'react'
 function CartDetail() {
     const {deleteItem, carrito} = useContext(contexto);
 
-    const borrar = () => {
-      deleteItem();
-    }
-   
    
   return (
     <>
     {carrito.length === 0 ?
     (<Row>
-        <Col xs={12}>
+        <Col xs={12} >
+          <div className="carrito-vacio">
           <p className="text-center">Tu carrito esta vacio, agrega algún producto para hacernos feliz</p>
-          <a class="boton-detail" href="/">Ir al catálogo</a>
+          <a className="boton-detail" href="/">Ir al catálogo</a>
+          </div>
         </Col>
       </Row>) :
    (<>

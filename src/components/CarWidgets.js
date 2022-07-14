@@ -6,15 +6,15 @@ import {contexto} from './CartContext';
 
  const Car = () => {
  
-  const resultado = useContext(contexto)
-  const {agregarProducto, carrito} = useContext(contexto)
+  const {cantidadTotal} = useContext(contexto)
+  
   
   return (
     
     <div className='item-carrito'>
     <Link to='/carrito'>
     <img className="carrito" src={'../img/cart.svg'} alt="carrito"></img>
-     <h1>{carrito.length}</h1>
+     <h1>{cantidadTotal()}</h1>
     </Link>
     </div>
     
