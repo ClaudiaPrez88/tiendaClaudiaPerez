@@ -1,13 +1,12 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getProductById} from '../utils/Productos'
 import ItemDetail from './ItemDetail'
 import {Container,Row,Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductLoader from "./ProductLoader";
-import { db , collectionProductos } from "../config/firebase";
-import { getDoc, collection, doc } from 'firebase/firestore'
+import { collectionProductos } from "../config/firebase";
+import { getDoc, doc } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState ({})

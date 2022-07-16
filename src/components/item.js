@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import {Col} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import ProductLoader from "./ProductLoader";
 import {db} from '../config/firebase'
-import {getDocs, collection , query , where } from 'firebase/firestore';
+import {getDocs, collection } from 'firebase/firestore';
 
 
  function Item({id, name, image, price, stock}) {

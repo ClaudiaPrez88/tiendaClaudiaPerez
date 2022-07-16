@@ -1,15 +1,12 @@
 import {Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState ,  useContext} from 'react';
-import {contexto} from './CartContext';
+import { useState} from 'react';
 import { Link } from 'react-router-dom';
 
 
 
 // recibe componente hijo funcion del padre
 function ItemCount ({stock,initial,onAdd}) {
-let contextoEnItemCount = useContext(contexto)
-const {carrito} = useContext(contexto)
 
 const [isActive2, setIsActive2] = useState(false);
     const confirmarCompra = () =>{
