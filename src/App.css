@@ -274,6 +274,9 @@ button.btn.btn-primary {
 .slider img.d-block.w-100 {
   opacity: 0;
 }
+.carrito-compras img{
+  width: 300px;
+}
 }
 
 

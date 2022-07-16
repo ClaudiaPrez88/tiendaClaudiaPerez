@@ -12,9 +12,9 @@ function TotalCart() {
 
   return (
     <>
-        <Col xs={{span: 3, offset: 5}}>Total paquetes:{cantidadTotal()}</Col>
-        <Col xs={2}>Precio total: $ {precioTotal()}</Col>
-        <Col xs={2}> <Button onClick={vaciar}>Vaciar carrito</Button></Col>
+        <Col xs={6} md={{span: 3, offset: 5}}>Total paquetes:{cantidadTotal()}</Col>
+        <Col xs={6} md={2}>Precio total: $ {precioTotal()}</Col>
+        <Col xs={12} md={2}> <Button onClick={vaciar}>Vaciar carrito</Button></Col>
     </>
   )
 }

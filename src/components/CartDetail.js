@@ -27,17 +27,17 @@ function CartDetail() {
         return( 
         <div className="producto-carrito">
             <Row>
-            <Col xs={2}><img alt="producto" src={product.image}></img></Col>
-            <Col xs={3}>
-            <p className="">{product.name}</p>
+            <Col xs={12} md={2}><img alt="producto" src={product.image}></img></Col>
+            <Col  xs={12} md={3}>
+            <p className="">{`Nombre: ${product.name}`}</p>
             </Col>
-            <Col xs={3}>
+            <Col xs={6} md={3}>
               <p>Cantidad: {product.cantidad}</p>
             </Col>
-            <Col xs={2}>
-            <p> {`$ ${product.price} USD`}</p>
+            <Col xs={6} md={2}>
+            <p> {`Precio c/u: $ ${product.price} USD`}</p>
             </Col>
-            <Col  xs={2}>
+            <Col xs={12} md={2}>
             <Button  className="" onClick={()=>deleteItem(product.id)}>
             <span>Remover</span>
             </Button>
