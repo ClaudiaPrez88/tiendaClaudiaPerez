@@ -1,12 +1,17 @@
 # Tienda Claudia Perez
+
 Este proyecto se trata de una tienda virtual de servilletas para decoupage.
 La idea es que el usuario ingrese a la página y pueda visualizar un menú de navegación, un slider que muestre la técnica de decoupage y luego el catalogo completo de productos. En el menú de navegación podrá filtrar las categorias.
  
-Estoy usando 'Bootstrap' para crear un diseño responsivo y 'Css' ya que es algo que ya conozco y mi enfasis estaba en comprender React durante este curso. Por lo mismo aún no esta completamente responsivo, es algo que iré puliendo más adelante, luego terminar el curso. 
+Estoy usando 'Bootstrap' para crear un diseño responsivo y 'Css' ya que es algo que conozco y mi enfasis estaba puesto en comprender React durante este curso y no tenía más tiempo libre para aventurarme en cosas nuevas, asi que me mantuve con lo conocido. Le versión en la página web no esta completamente responsiva, pero el último commit de github lo está. 
 
-Decidí poner el slider al inicio porque deseo poder usar este sitio no solo de portafolio si no para para su uso real y la mayoria de los clientes son personas de la tercera edad por lo que hay que usar letras grandes e ilustrar bien desde un inicio que se vende. También la navegación debe ser muy clara. En este caso tienen que hacer 3 clicks para llegar a su meta final que es enviar una lista de servilletas para comprar, asi que me parece que es tiempo razonable. 
+Decidí poner el slider al inicio porque deseo poder usar este sitio no solo de portafolio si no para para su uso real y la mayoria de los clientes son personas de la tercera edad por lo que hay que usar letras grandes e ilustrar bien desde un inicio lo que se vende. También la navegación debe ser muy clara. En este caso tienen que hacer 3 clicks para llegar a su meta final que es enviar su pedido con sus datos a la base de datos de firebase.
 
-Fue un gran reto para mi tomar el curso, diría que me costo mucho, sobretodo la parte de contexto pero estoy contenta con lo aprendido. 
+Fue un gran reto para mi tomar el curso, ya que había cursado el curso de Javascript en coderhouse pero no tenía más conocimiento que el que me fué entregado durante el curso. Sobretodo la parte de contexto fué bastante estresante pero estoy conforme con el resultado de lo aprendido.
+
+Muchas gracias.
+
+Pueden ingresar a ver la demo de la app, haciendo click aquí [Live Demo](https://react-coder-9253e.firebaseapp.com/).
 
 
 
