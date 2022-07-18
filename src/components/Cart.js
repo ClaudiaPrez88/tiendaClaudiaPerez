@@ -59,7 +59,7 @@ function Cart() {
          <Col md={12}><CartDetail/></Col>
           <Col md={{ span: 6, offset: 3 }}>
             <p>
-            Escribe tus datos en el formulario y haz click en el botón de proceder a la compra para enviarnos tu pedido. Luego de esto, te enviaremos un email con las instrucciones y datos demás datos para finalizar tu compra. 
+            Escribe tus datos en el formulario y haz click en el botón "finalizar compra" para enviarnos tu pedido. Luego de esto, te enviaremos un email con los datos de transferencia y fecha de entrega de tu compra. 
             </p>
             <Formulario
                         handleChange={handleChange}
